@@ -28,16 +28,19 @@ Counter.prototype.getCount = function () {
 Counter.prototype.run = function () {
   this._count = this._start;
   this.dispatchEvent(Counter.getEvents().ON_COUNTER_STARTED, {
+    eventType: Counter.getEvents().ON_COUNTER_STARTED,
     target: this,
     count: this._count,
   });
   for (; this._count < this._stop; this._count += this._step) {
     this.dispatchEvent(Counter.getEvents().ON_COUNTER_CHANGED, {
+      eventType: Counter.getEvents().ON_COUNTER_CHANGED,
       target: this,
       count: this._count,
     });
   }
   this.dispatchEvent(Counter.getEvents().ON_COUNTER_FINISHED, {
+    eventType: Counter.getEvents().ON_COUNTER_FINISHED,
     target: this,
     count: this._count,
   });
