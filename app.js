@@ -19,3 +19,5 @@ counter.addListener(Counter.getEvents().ON_COUNTER_FINISHED, (evt) => {
 });
 
 counter.run();
+
+console.log(counter.events);
